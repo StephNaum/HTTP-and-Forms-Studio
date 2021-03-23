@@ -39,7 +39,6 @@
 			display: relative;
 			padding-top: 20px;
 			padding-left: 23%;
-			
 		}
 		#button{
 			background-color:rgb(199, 174, 180);
@@ -65,16 +64,15 @@
       		event.preventDefault();
 		}
 		let form = document.querySelector("form");
-		let actionURL;
 		let actions = {
 			"google" : "https://www.google.com/search",
 			"duckDuckGo" : "https://duckduckgo.com/",
 			"bing" : "https://www.bing.com/search",
 			"ask" : "https://www.ask.com/web"};
-		let userChoice = engine.value;
-		for (let choice in actions){
-			actionURL = actions[choice]+"?q=";
-			if (userChoice === choice){
+		let userEngineChoice = engine.value;
+		for (const choice in actions){
+			let actionURL = actions[choice]+"?q=";
+			if (userEngineChoice === choice){
 				form.setAttribute('action',actionURL);
 			}
 		}
